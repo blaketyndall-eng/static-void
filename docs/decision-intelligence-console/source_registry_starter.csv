@@ -1,0 +1,9 @@
+name,category,auth_type,price_type,freshness,current_status,recommended_for
+FRED,economic,api_key,free,high,approved,macro context and trend signals
+BLS,economic,api_key,free,high,approved,labor and industry signals
+SEC EDGAR,regulatory,none,free,high,approved,filings and company disclosures
+OpenAlex,research,none,free,medium,approved,research discovery and citation context
+GNews,news,api_key,free_trial,high,watch,headline monitoring and market signals
+SerpAPI,search,api_key,paid,high,watch,search result monitoring and intelligence collection
+Crossref,research,none,free,medium,approved,publication metadata and research support
+Official Vendor Pages,vendor intelligence,none,free,high,approved,pricing features trust and security review
