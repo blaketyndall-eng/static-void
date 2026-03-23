@@ -1,0 +1,22 @@
+API_REQUEST_STARTED = "api.request.started"
+API_REQUEST_COMPLETED = "api.request.completed"
+API_REQUEST_FAILED = "api.request.failed"
+DB_QUERY_EXECUTED = "db.query.executed"
+DB_QUERY_FAILED = "db.query.failed"
+
+EVALUATION_CREATED = "evaluation.created"
+EVALUATION_STATUS_UPDATED = "evaluation.status_updated"
+EVALUATION_EVIDENCE_RECORD_CREATED = "evaluation.evidence_record_created"
+EVALUATION_ARTIFACT_CREATED = "evaluation.artifact_created"
+
+RECOMMENDATION_CREATED = "recommendation.created"
+RECOMMENDATION_GENERATED = "recommendation.generated"
+RECOMMENDATION_RANKED = "recommendation.ranked"
+
+DECISION_BOARD_SUMMARY_VIEWED = "decision_board.summary_viewed"
+DECISION_BOARD_ATTENTION_NEEDED_VIEWED = "decision_board.attention_needed_viewed"
+ACTIVITY_RECENT_VIEWED = "activity.recent_viewed"
+EVALUATION_SUMMARY_VIEWED = "evaluation.summary_viewed"
+EVALUATION_READINESS_VIEWED = "evaluation.readiness_viewed"
+RECOMMENDATION_CARDS_VIEWED = "recommendation.cards_viewed"
+RECOMMENDATION_WHY_VIEWED = "recommendation.why_viewed"
