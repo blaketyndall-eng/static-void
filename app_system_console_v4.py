@@ -1,0 +1,66 @@
+from fastapi import FastAPI
+
+from packages.routers.backend_app_builder_bridge import router as app_builder_bridge_router
+from packages.routers.backend_app_builder_persistent import router as app_builder_persistent_router
+from packages.routers.backend_app_builder_v2 import router as app_builder_v2_router
+from packages.routers.backend_apps import router as apps_router
+from packages.routers.backend_apps_metrics import router as apps_metrics_router
+from packages.routers.backend_apps_views import router as apps_views_router
+from packages.routers.backend_brain_links import router as brain_links_router
+from packages.routers.backend_global_summary import router as global_summary_router
+from packages.routers.backend_investment import router as investment_router
+from packages.routers.backend_investment_crypto import router as investment_crypto_router
+from packages.routers.backend_investment_learning import router as investment_learning_router
+from packages.routers.backend_investment_operator import router as investment_operator_router
+from packages.routers.backend_investment_operator_v2 import router as investment_operator_v2_router
+from packages.routers.backend_investment_options import router as investment_options_router
+from packages.routers.backend_investment_portfolio import router as investment_portfolio_router
+from packages.routers.backend_investment_prediction import router as investment_prediction_router
+from packages.routers.backend_investment_swing import router as investment_swing_router
+from packages.routers.backend_investment_views import router as investment_views_router
+from packages.routers.backend_marketing import router as marketing_router
+from packages.routers.backend_marketing_app_links_v2 import router as marketing_app_links_router
+from packages.routers.backend_marketing_learning import router as marketing_learning_router
+from packages.routers.backend_marketing_summary import router as marketing_summary_router
+from packages.routers.backend_marketing_views import router as marketing_views_router
+from packages.routers.backend_master_console import router as master_console_router
+from packages.routers.backend_master_console_v2 import router as master_console_v2_router
+from packages.routers.backend_opportunity_hunter import router as opportunity_router
+from packages.routers.backend_opportunity_hunter_auto_scan import router as opportunity_auto_scan_router
+from packages.routers.backend_opportunity_hunter_auto_scan_v2 import router as opportunity_auto_scan_v2_router
+from packages.routers.backend_opportunity_hunter_scanners import router as opportunity_scanners_router
+from packages.routers.backend_opportunity_hunter_scanners_v2 import router as opportunity_scanners_v2_router
+from packages.routers.backend_system_events import router as system_events_router
+
+app = FastAPI(title="Unified System Console V4 API")
+app.include_router(apps_router)
+app.include_router(apps_metrics_router)
+app.include_router(apps_views_router)
+app.include_router(app_builder_persistent_router)
+app.include_router(app_builder_v2_router)
+app.include_router(app_builder_bridge_router)
+app.include_router(marketing_router)
+app.include_router(marketing_views_router)
+app.include_router(marketing_learning_router)
+app.include_router(marketing_summary_router)
+app.include_router(marketing_app_links_router)
+app.include_router(opportunity_router)
+app.include_router(opportunity_scanners_router)
+app.include_router(opportunity_scanners_v2_router)
+app.include_router(opportunity_auto_scan_router)
+app.include_router(opportunity_auto_scan_v2_router)
+app.include_router(brain_links_router)
+app.include_router(investment_router)
+app.include_router(investment_swing_router)
+app.include_router(investment_options_router)
+app.include_router(investment_prediction_router)
+app.include_router(investment_crypto_router)
+app.include_router(investment_views_router)
+app.include_router(investment_portfolio_router)
+app.include_router(investment_learning_router)
+app.include_router(investment_operator_router)
+app.include_router(investment_operator_v2_router)
+app.include_router(master_console_router)
+app.include_router(master_console_v2_router)
+app.include_router(system_events_router)
+app.include_router(global_summary_router)
