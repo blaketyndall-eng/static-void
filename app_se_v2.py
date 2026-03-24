@@ -1,0 +1,14 @@
+from fastapi import FastAPI
+
+from packages.routers.backend_software_engineering import router as software_engineering_router
+from packages.routers.backend_software_engineering_learning import router as software_engineering_learning_router
+from packages.routers.backend_software_engineering_summary import router as software_engineering_summary_router
+from packages.routers.backend_software_engineering_summary_v2 import router as software_engineering_summary_v2_router
+from packages.routers.backend_software_engineering_v2 import router as software_engineering_v2_router
+
+app = FastAPI(title='Software Engineering Engine V2 API')
+app.include_router(software_engineering_router)
+app.include_router(software_engineering_v2_router)
+app.include_router(software_engineering_learning_router)
+app.include_router(software_engineering_summary_router)
+app.include_router(software_engineering_summary_v2_router)
