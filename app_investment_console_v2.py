@@ -1,0 +1,26 @@
+from fastapi import FastAPI
+
+from packages.routers.backend_investment import router as investment_router
+from packages.routers.backend_investment_console import router as investment_console_router
+from packages.routers.backend_investment_crypto import router as investment_crypto_router
+from packages.routers.backend_investment_learning import router as investment_learning_router
+from packages.routers.backend_investment_operator import router as investment_operator_router
+from packages.routers.backend_investment_operator_v2 import router as investment_operator_v2_router
+from packages.routers.backend_investment_options import router as investment_options_router
+from packages.routers.backend_investment_portfolio import router as investment_portfolio_router
+from packages.routers.backend_investment_prediction import router as investment_prediction_router
+from packages.routers.backend_investment_swing import router as investment_swing_router
+from packages.routers.backend_investment_views import router as investment_views_router
+
+app = FastAPI(title="Investment Console V2 API")
+app.include_router(investment_router)
+app.include_router(investment_swing_router)
+app.include_router(investment_options_router)
+app.include_router(investment_prediction_router)
+app.include_router(investment_crypto_router)
+app.include_router(investment_views_router)
+app.include_router(investment_portfolio_router)
+app.include_router(investment_learning_router)
+app.include_router(investment_operator_router)
+app.include_router(investment_operator_v2_router)
+app.include_router(investment_console_router)
