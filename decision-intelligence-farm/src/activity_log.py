@@ -24,7 +24,7 @@ class LogEntry(BaseModel):
     timestamp: str = Field(
         default_factory=lambda: datetime.now(timezone.utc).isoformat()[:19]
     )
-    category: str          # knowledge, seed, milestone, dog, decision, reflection, skill, tool, budget
+    category: str          # knowledge, seed, milestone, dog, decision, reflection, skill, tool, budget, execution
     event: str             # short event type: "learned", "evolved", "achieved", "taught", etc.
     title: str             # human-readable summary
     detail: str = ""       # optional longer description
@@ -87,6 +87,19 @@ class ActivityLog:
     def log_budget(self, event: str, detail: str = ""):
         self.log("budget", event, f"Budget: {event}", detail, ["budget"])
 
+
+    def log_execution(self, title: str, detail: str = "", tags: list[str] = None):
+        self.log("execution", "progressed", title, detail, tags or ["execution"])
+
+    def log_scorecard(self, week_start: str, week_end: str, detail: str = ""):
+        self.log(
+            "execution",
+            "scorecard",
+            f"Weekly scorecard captured ({week_start} to {week_end})",
+            detail,
+            ["execution", "scorecard", week_start, week_end],
+        )
+
     # ── Read ──────────────────────────────────────────────────
 
     def get_recent(self, limit: int = 50, category: str = None) -> list[dict]:
@@ -143,6 +156,7 @@ class ActivityLog:
             "skill": "⚡",
             "tool": "🔧",
             "budget": "💰",
+            "execution": "🧭",
         }
         entries = self.get_recent(limit)
         timeline = []
